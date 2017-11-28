@@ -97,6 +97,7 @@ module.exports = function(project) {
 
         // on data (logs)
         ae.stdout.on('data', (data) => {
+            project.callMethod('progressChange',data);
             aedata.push(data.toString());
         });
 

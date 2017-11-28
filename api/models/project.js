@@ -168,10 +168,10 @@ class Project {
      * Event caller 
      * @param  {String} method Event name
      */
-    callMethod(method) {
+    callMethod(method, data) {
         if (this.callbacks[method]) {
             for (let callback of this.callbacks[method]) {
-                callback( this.errorMessage, this);
+                callback(data, this.errorMessage, this);
             }
         }
     }
